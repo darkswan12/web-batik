@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Batik - Beranda</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="{{ url_for('home') }}">Klasifikasi Batik</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'home' %}active fw-bold text-primary{% endif %}" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'klasifikasi' %}active fw-bold text-primary{% endif %}" href="{{ url_for('klasifikasi') }}">Klasifikasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'profil' %}active fw-bold text-primary{% endif %}" href="{{ url_for('profil') }}">Profil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Main Content -->
+    <div class="container py-5">
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-10">
+                <div class="card shadow-lg border-0 p-4" style="border-radius: 20px;">
+                    <div class="card-body">
+                        <h1 class="main-title mb-3 text-center">Klasifikasi Batik</h1>
+                        <p class="lead text-center">Selamat datang di aplikasi klasifikasi batik berbasis AI!<br>Batik adalah kain bergambar yang pembuatannya secara khusus dengan menuliskan atau menerakan malam pada kain, kemudian pengolahannya diproses dengan cara tertentu yang memiliki kekhasan. Batik merupakan warisan budaya Indonesia yang diakui dunia.</p>
+                        <hr>
+                        <h4 class="mt-4 text-center">Jenis Batik yang Bisa Diklasifikasi:</h4>
+                        <div class="row g-4 mt-2 justify-content-center">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card batik-card h-100">
+                                    <img src="{{ url_for('static', filename='betawi.png') }}" class="card-img-top" alt="Batik Betawi">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Batik Betawi</h5>
+                                        <p class="card-text">Batik Betawi memiliki motif warna cerah dan sering menampilkan ondel-ondel, rumah adat, serta flora fauna khas Jakarta.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card batik-card h-100">
+                                    <img src="{{ url_for('static', filename='kawung.jpg') }}" class="card-img-top" alt="Batik Kawung">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Batik Kawung</h5>
+                                        <p class="card-text">Motif bulat-bulat menyerupai buah kawung (aren), melambangkan kesucian dan keadilan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card batik-card h-100">
+                                    <img src="{{ url_for('static', filename='megamendung.jpg') }}" class="card-img-top" alt="Batik Megamendung">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Batik Megamendung</h5>
+                                        <p class="card-text">Motif awan berlapis-lapis dengan warna cerah, khas Cirebon, melambangkan kesabaran dan keteduhan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card batik-card h-100">
+                                    <img src="{{ url_for('static', filename='parang.png') }}" class="card-img-top" alt="Batik Parang">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Batik Parang</h5>
+                                        <p class="card-text">Motif Parang berbentuk garis miring berombak, melambangkan kekuatan, semangat, dan kesinambungan.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card batik-card h-100">
+                                    <img src="{{ url_for('static', filename='sekarjagad.jpg') }}" class="card-img-top" alt="Batik Sekar Jagad">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Batik Sekar Jagad</h5>
+                                        <p class="card-text">Motif peta dunia penuh bunga, melambangkan keindahan dan keragaman budaya di Nusantara.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <a href="{{ url_for('klasifikasi') }}" class="btn btn-primary btn-lg shadow">Klasifikasi Batik Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-5 bg-white border-top">
+        <span class="text-secondary">Created by <b>Darmawan Suhara</b> with Flask &amp; <span style="color:#e25555;">&#10084;</span></span>
+    </footer>
+    <!-- End Footer -->
+    <!-- Audio Batik & Toggle -->
+    <audio id="audio-batik" loop>
+        <source src="{{ url_for('static', filename='batik_audio.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="audio-toggle" id="audio-toggle" onclick="toggleAudio()" title="Audio On/Off">
+        <span id="audio-icon" class="audio-on">&#128266;</span>
+    </div>
+    <script>
+    let audio = document.getElementById('audio-batik');
+    let icon = document.getElementById('audio-icon');
+    let isPlaying = false;
+    window.addEventListener('DOMContentLoaded', function() {
+        audio.volume = 0.5;
+        audio.play();
+        isPlaying = true;
+        icon.classList.add('audio-on');
+        icon.classList.remove('audio-off');
+    });
+    function toggleAudio() {
+        if (audio.paused) {
+            audio.play();
+            icon.innerHTML = '&#128266;'; // Speaker on
+            icon.classList.add('audio-on');
+            icon.classList.remove('audio-off');
+            isPlaying = true;
+        } else {
+            audio.pause();
+            icon.innerHTML = '&#128263;'; // Speaker off
+            icon.classList.add('audio-off');
+            icon.classList.remove('audio-on');
+            isPlaying = false;
+        }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

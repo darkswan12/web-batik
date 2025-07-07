@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil - Darmawan Suhara</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="{{ url_for('home') }}">Klasifikasi Batik</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'home' %}active fw-bold text-primary{% endif %}" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'klasifikasi' %}active fw-bold text-primary{% endif %}" href="{{ url_for('klasifikasi') }}">Klasifikasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.endpoint == 'profil' %}active fw-bold text-primary{% endif %}" href="{{ url_for('profil') }}">Profil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="card main-card shadow-lg p-4">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-4 text-center">
+                            <img src="{{ url_for('static', filename='profil.jpg') }}" class="rounded-circle shadow" alt="Foto Profil" style="width: 160px; height: 160px; object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <h2 class="main-title mb-2">Darmawan Suhara</h2>
+                            <h5 class="text-primary mb-3">Kelas 4IA28</h5>
+                            <p class="mb-2"><b>Alasan membuat website ini:</b></p>
+                            <p>Saya membuat website klasifikasi batik ini sebagai tugas dan juga untuk memperkenalkan kekayaan budaya Indonesia melalui teknologi. Dengan website ini, saya berharap masyarakat dapat lebih mengenal berbagai motif batik dan memanfaatkan AI untuk edukasi serta pelestarian budaya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center py-4 mt-5 bg-white border-top">
+        <span class="text-secondary">Created by <b>Darmawan Suhara</b> with Flask &amp; <span style="color:#e25555;">&#10084;</span></span>
+    </footer>
+    <!-- End Footer -->
+    <!-- Audio Batik & Toggle -->
+    <audio id="audio-batik" loop>
+        <source src="{{ url_for('static', filename='batik_audio.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="audio-toggle" id="audio-toggle" onclick="toggleAudio()" title="Audio On/Off">
+        <span id="audio-icon" class="audio-on">&#128266;</span>
+    </div>
+    <script>
+    let audio = document.getElementById('audio-batik');
+    let icon = document.getElementById('audio-icon');
+    let isPlaying = false;
+    window.addEventListener('DOMContentLoaded', function() {
+        audio.volume = 0.5;
+        audio.play();
+        isPlaying = true;
+        icon.classList.add('audio-on');
+        icon.classList.remove('audio-off');
+    });
+    function toggleAudio() {
+        if (audio.paused) {
+            audio.play();
+            icon.innerHTML = '&#128266;'; // Speaker on
+            icon.classList.add('audio-on');
+            icon.classList.remove('audio-off');
+            isPlaying = true;
+        } else {
+            audio.pause();
+            icon.innerHTML = '&#128263;'; // Speaker off
+            icon.classList.add('audio-off');
+            icon.classList.remove('audio-on');
+            isPlaying = false;
+        }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
