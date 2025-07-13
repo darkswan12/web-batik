@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'home' %}active fw-bold text-primary{% endif %}" href="{{ url_for('home') }}">Home</a>
+                        <a class="nav-link {% if request.endpoint == 'home' %}active fw-bold text-primary{% endif %}" href="{{ url_for('home') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.endpoint == 'klasifikasi' %}active fw-bold text-primary{% endif %}" href="{{ url_for('klasifikasi') }}">Klasifikasi</a>
@@ -41,55 +41,149 @@
                         <p class="lead text-center">Selamat datang di aplikasi klasifikasi batik berbasis AI!<br>Batik adalah kain bergambar yang pembuatannya secara khusus dengan menuliskan atau menerakan malam pada kain, kemudian pengolahannya diproses dengan cara tertentu yang memiliki kekhasan. Batik merupakan warisan budaya Indonesia yang diakui dunia.</p>
                         <hr>
                         <h4 class="mt-4 text-center">Jenis Batik yang Bisa Diklasifikasi:</h4>
+                        <!-- Card Batik -->
                         <div class="row g-4 mt-2 justify-content-center">
+                            <!-- Batik Betawi -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card batik-card h-100">
                                     <img src="{{ url_for('static', filename='betawi.png') }}" class="card-img-top" alt="Batik Betawi">
                                     <div class="card-body">
                                         <h5 class="card-title">Batik Betawi</h5>
                                         <p class="card-text">Batik Betawi memiliki motif warna cerah dan sering menampilkan ondel-ondel, rumah adat, serta flora fauna khas Jakarta.</p>
+                                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalBetawi">Tentang Batik Betawi</button>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Batik Kawung -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card batik-card h-100">
                                     <img src="{{ url_for('static', filename='kawung.jpg') }}" class="card-img-top" alt="Batik Kawung">
                                     <div class="card-body">
                                         <h5 class="card-title">Batik Kawung</h5>
                                         <p class="card-text">Motif bulat-bulat menyerupai buah kawung (aren), melambangkan kesucian dan keadilan.</p>
+                                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalKawung">Tentang Batik Kawung</button>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Batik Megamendung -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card batik-card h-100">
                                     <img src="{{ url_for('static', filename='megamendung.jpg') }}" class="card-img-top" alt="Batik Megamendung">
                                     <div class="card-body">
                                         <h5 class="card-title">Batik Megamendung</h5>
                                         <p class="card-text">Motif awan berlapis-lapis dengan warna cerah, khas Cirebon, melambangkan kesabaran dan keteduhan.</p>
+                                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalMegamendung">Tentang Batik Megamendung</button>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Batik Parang -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card batik-card h-100">
                                     <img src="{{ url_for('static', filename='parang.png') }}" class="card-img-top" alt="Batik Parang">
                                     <div class="card-body">
                                         <h5 class="card-title">Batik Parang</h5>
                                         <p class="card-text">Motif Parang berbentuk garis miring berombak, melambangkan kekuatan, semangat, dan kesinambungan.</p>
+                                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalParang">Tentang Batik Parang</button>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Batik Sekar Jagad -->
                             <div class="col-md-6 col-lg-4">
                                 <div class="card batik-card h-100">
                                     <img src="{{ url_for('static', filename='sekarjagad.jpg') }}" class="card-img-top" alt="Batik Sekar Jagad">
                                     <div class="card-body">
                                         <h5 class="card-title">Batik Sekar Jagad</h5>
                                         <p class="card-text">Motif peta dunia penuh bunga, melambangkan keindahan dan keragaman budaya di Nusantara.</p>
+                                        <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#modalSekarJagad">Tentang Batik Sekar Jagad</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center mt-4">
-                            <a href="{{ url_for('klasifikasi') }}" class="btn btn-primary btn-lg shadow">Klasifikasi Batik Sekarang</a>
+                        <!-- MODALS -->
+                        <!-- Modal Betawi -->
+                        <div class="modal fade" id="modalBetawi" tabindex="-1" aria-labelledby="modalBetawiLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalBetawiLabel">Batik Betawi</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Batik Betawi merupakan batik khas Jakarta yang identik dengan warna-warna cerah dan motif-motif seperti ondel-ondel, rumah adat, serta flora fauna khas Betawi. Batik ini mencerminkan keberagaman budaya dan semangat masyarakat Betawi.</p>
+                                <div class="ratio ratio-16x9 mb-2">
+                                  <iframe src="https://www.youtube.com/embed/S2m0Iu50P5g" title="Batik Betawi" allowfullscreen></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Modal Kawung -->
+                        <div class="modal fade" id="modalKawung" tabindex="-1" aria-labelledby="modalKawungLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalKawungLabel">Batik Kawung</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Batik Kawung memiliki motif bulat-bulat menyerupai buah kawung (aren). Motif ini melambangkan kesucian, keadilan, dan harapan agar pemakainya menjadi manusia yang bermanfaat bagi sesama.</p>
+                                <div class="ratio ratio-16x9 mb-2">
+                                  <iframe src="https://www.youtube.com/embed/vpDMrF1PHcI" title="Batik Kawung" allowfullscreen></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Modal Megamendung -->
+                        <div class="modal fade" id="modalMegamendung" tabindex="-1" aria-labelledby="modalMegamendungLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalMegamendungLabel">Batik Megamendung</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Batik Megamendung berasal dari Cirebon, terkenal dengan motif awan berlapis-lapis dan warna-warna cerah. Motif ini melambangkan kesabaran, keteduhan, dan harapan akan kehidupan yang damai.</p>
+                                <div class="ratio ratio-16x9 mb-2">
+                                  <iframe src="https://www.youtube.com/embed/C-kcD6hbAuY?si" title="Batik Megamendung" allowfullscreen></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Modal Parang -->
+                        <div class="modal fade" id="modalParang" tabindex="-1" aria-labelledby="modalParangLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalParangLabel">Batik Parang</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Batik Parang adalah salah satu motif batik tertua di Indonesia, berbentuk garis miring berombak. Motif ini melambangkan kekuatan, semangat pantang menyerah, dan kesinambungan hidup.</p>
+                                <div class="ratio ratio-16x9 mb-2">
+                                  <iframe src="https://www.youtube.com/embed/vLGdbkkyV1g" title="Batik Parang" allowfullscreen></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Modal Sekar Jagad -->
+                        <div class="modal fade" id="modalSekarJagad" tabindex="-1" aria-labelledby="modalSekarJagadLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="modalSekarJagadLabel">Batik Sekar Jagad</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Batik Sekar Jagad memiliki motif seperti peta dunia penuh bunga, melambangkan keindahan, keragaman, dan persatuan budaya di Nusantara.</p>
+                                <div class="ratio ratio-16x9 mb-2">
+                                  <iframe src="https://www.youtube.com/embed/AzggY4T7O_M" title="Batik Sekar Jagad" allowfullscreen></iframe>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -136,6 +230,25 @@
         }
     }
     </script>
+    <script>
+// Fungsi untuk menghentikan video saat modal ditutup
+document.addEventListener('DOMContentLoaded', function() {
+    const modals = ['modalBetawi', 'modalKawung', 'modalMegamendung', 'modalParang', 'modalSekarJagad'];
+    
+    modals.forEach(modalId => {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.addEventListener('hidden.bs.modal', function () {
+                const iframe = this.querySelector('iframe');
+                if (iframe) {
+                    const videoSrc = iframe.src;
+                    iframe.src = videoSrc;
+                }
+            });
+        }
+    });
+});
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 
