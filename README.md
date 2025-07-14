@@ -10,7 +10,6 @@ Website ini dibuat untuk mengenalkan dan mengklasifikasikan berbagai motif batik
 - 🎨 **Klasifikasi Gambar Batik**: Upload gambar batik dan dapatkan prediksi jenis batiknya (Betawi, Kawung, Megamendung, Parang, Sekar Jagad)
 - 🖼️ **Preview Gambar**: Lihat preview gambar sebelum dan sesudah klasifikasi
 - 📚 **Info & Video Edukasi**: Setiap batik punya pop-up penjelasan dan video YouTube
-- 🔊 **Audio Relaksasi**: Musik menenangkan bertema batik, bisa diatur on/off
 - 📱 **Tampilan Responsif**: Nyaman diakses di desktop maupun mobile
 - 👤 **Profil Pembuat**: Kenali pembuat website ini
 
