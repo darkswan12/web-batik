@@ -36,7 +36,6 @@ Website ini dibuat untuk mengenalkan dan mengklasifikasikan berbagai motif batik
 - **Beranda**: Penjelasan batik, daftar batik, pop-up info & video
 - **Klasifikasi**: Upload gambar, preview, hasil prediksi
 - **Profil**: Nama, kelas, alasan pembuatan, dan foto pembuat
-- **Audio**: Musik menenangkan, bisa diaktifkan/nonaktifkan
 
 ---
 
@@ -55,7 +54,7 @@ Website ini dibuat oleh **Darmawan Suhara** (4IA28) sebagai tugas dan kontribusi
 ---
 
 ## 💡 Catatan
-- Pastikan file model, gambar, dan audio sudah ada di folder `static/` dan `model/`.
+- Pastikan file model dan gambar sudah ada di folder `static/` dan `model/`.
 - Website ini menggunakan Flask, Bootstrap, dan TensorFlow.
 
 ---
